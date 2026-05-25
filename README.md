@@ -197,9 +197,9 @@ RAG Cost Control Layer — Benchmark Suite
 [1/4] Semantic Cache
   Running cache benchmark (200 queries)...
   Hit rate:             98.5%
-  Avg hit latency:      3.96 ms
-  Avg miss latency:     4.01 ms
-  p95 hit latency:      5.07 ms
+  Avg hit latency:      3.82 ms
+  Avg miss latency:     4.02 ms
+  p95 hit latency:      6.29  ms
   Cost saved (sample):  $0.788
 
 [2/4] Query Router
@@ -208,7 +208,7 @@ RAG Cost Control Layer — Benchmark Suite
   Standard:             16.4%
   Complex:               2.6%
   Total saved:          $3.41
-  Avg routing latency:  0.019 ms
+  Avg routing latency:  0.015 ms
 
 [3/4] Scale Comparison — Naive vs Optimized
   Scale               Naive/day   Opt/day   Saving   Monthly saving
