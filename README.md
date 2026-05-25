@@ -429,7 +429,7 @@ All measured on Python 3.12.6, Windows 11, CPU-only, no GPU. Latency figures var
 
 | Operation | Latency | Notes |
 |---|---|---|
-| Cache lookup (hit) | ~3.96 ms | TF-IDF embed + cosine similarity |
+| Cache lookup (hit) | ~3.82 ms | TF-IDF embed + cosine similarity |
 | Cache lookup (miss) | ~4.01 ms | Same as hit, no response returned |
 | Query routing | ~0.019 ms | Keyword scoring, negligible overhead |
 | Budget reservation | <0.1 ms | In-memory slot allocation |
