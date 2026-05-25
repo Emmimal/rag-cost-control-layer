@@ -143,12 +143,12 @@ RAG Cost Control Layer — End-to-End Production Demo
   Tokens:  89
   Cost:    $0.000015
   Saved:   $0.007417  vs always-expensive model
-  Latency: 0.25 ms
+  Latency: <0.5 ms
 
 [Query 02] What is a vector database?
   Source:  CACHE HIT
   Saved:   $0.0040  (LLM call avoided)
-  Latency: 0.10 ms
+  
 
 [Query 04] How does hybrid retrieval differ from pure vector search?
   Source:  LLM CALL
@@ -165,7 +165,7 @@ RAG Cost Control Layer — End-to-End Production Demo
 [Query 07] What is RAG?  (repeated)
   Source:  CACHE HIT
   Saved:   $0.0040  (LLM call avoided)
-  Latency: 0.46 ms
+  
 
 =================================================================
 Run Summary
@@ -197,9 +197,9 @@ RAG Cost Control Layer — Benchmark Suite
 [1/4] Semantic Cache
   Running cache benchmark (200 queries)...
   Hit rate:             98.5%
-  Avg hit latency:      3.82 ms
-  Avg miss latency:     4.02 ms
-  p95 hit latency:      6.29  ms
+  Avg hit latency:      ~4 ms
+  Avg miss latency:     ~4–5 ms
+  p95 hit latency:      ~5–7 ms
   Cost saved (sample):  $0.788
 
 [2/4] Query Router
@@ -208,7 +208,7 @@ RAG Cost Control Layer — Benchmark Suite
   Standard:             16.4%
   Complex:               2.6%
   Total saved:          $3.41
-  Avg routing latency:  0.015 ms
+  Avg routing latency:  <0.025 ms
 
 [3/4] Scale Comparison — Naive vs Optimized
   Scale               Naive/day   Opt/day   Saving   Monthly saving
@@ -429,9 +429,9 @@ All measured on Python 3.12.6, Windows 11, CPU-only, no GPU. Latency figures var
 
 | Operation | Latency | Notes |
 |---|---|---|
-| Cache lookup (hit) | ~3.82 ms | TF-IDF embed + cosine similarity |
-| Cache lookup (miss) | ~4.01 ms | Same as hit, no response returned |
-| Query routing | ~0.019 ms | Keyword scoring, negligible overhead |
+| Cache lookup (hit) | ~4 ms | TF-IDF embed + cosine similarity |
+| Cache lookup (miss) | ~4–5 ms | Same as hit, no response returned |
+| Query routing | <0.025 ms | Keyword scoring, negligible overhead |
 | Budget reservation | <0.1 ms | In-memory slot allocation |
 | Circuit breaker check | <0.1 ms | RLock + deque window scan |
 | LLM call (real, not mocked) | 200–800 ms | Provider and network dependent |
