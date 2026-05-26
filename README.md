@@ -8,7 +8,7 @@ A pure-Python cost control layer for RAG pipelines — semantic caching, query r
 
 Most RAG tutorials stop at retrieval quality. This library handles what comes next — making sure the system doesn't silently burn money on every request.
 
-**Read the full write-up on Towards Data Science →** [My RAG System Was Burning 85% More Tokens Than Needed — I Built a Cost Control Layer to Fix It](https://towardsdatascience.com)
+**Read the full write-up on Towards Data Science →** [My RAG System Was Burning 85% More Tokens Than Needed — I Built a Cost Control Layer to Fix It](https://towardsdatascience.com/author/emmimalp-alexander/)
 
 ---
 
